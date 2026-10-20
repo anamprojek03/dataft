@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Data Open FT</title>
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<div class="w">
+  <h1 id="title">Data Open FT</h1>
+  <p class="sub">Setiap 1x open <span id="price">Rp 0</span></p>
+
+  <div class="g">
+    <div class="c"><small>Total open</small><b id="totalOpen">0</b></div>
+    <div class="c"><small>Jumlah data</small><b id="totalEntries">0</b></div>
+  </div>
+
+  <div class="box">
+    <h2>Tambah data open</h2>
+    <div class="al" id="ok" hidden>Data berhasil ditambahkan.</div>
+    <div class="al err" id="err" hidden></div>
+    <form id="addForm" autocomplete="off">
+      <div class="f">
+        <div><label for="count">Jumlah open</label><input id="count" name="count" type="number" min="1" max="100" required value="1"></div>
+        <div><label for="date">Tanggal</label><input id="date" name="date" type="date" required></div>
+        <div><label for="note">Catatan</label><input id="note" name="note" maxlength="120" placeholder="opsional"></div>
+        <div class="hp" aria-hidden="true"><label>Website</label><input name="website" tabindex="-1" autocomplete="off"></div>
+        <button type="submit">Tambah</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="box">
+    <h2>Riwayat open</h2>
+    <input id="q" placeholder="Cari catatan…" style="margin-bottom:12px">
+    <div class="ov"><table>
+      <thead><tr><th>Tanggal</th><th>Nama</th><th class="r">Open</th><th>Catatan</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table></div>
+    <div class="em" id="empty">Belum ada data.</div>
+    <p class="note" id="limitNote" hidden>Menampilkan 500 data terbaru.</p>
+  </div>
+</div>
+<script src="/assets/app.js"></script>
+</body>
+</html>
